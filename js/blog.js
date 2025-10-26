@@ -40,7 +40,7 @@ async function carregarPosts() {
         <div class="blog-card-content">
           <h3>${post.title}</h3>
           <small>${new Date(post.publishedAt).toLocaleDateString('pt-BR')}</small>
-          <p>${post.content.html.substring(0, 150)}...</p>
+          <div class="blog-content">${post.content.html}</div>
         </div>
       </article>
     `).join('');
