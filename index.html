@@ -295,11 +295,20 @@
             /* - - - mobile - - - */
 
             @media (max-width: 1024px) and (min-width:601px) {
-                .blog-container {
-                    grid-template-columns: repeat(2, 1fr);
-                }
                 .carousel-grid {
-                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-columns: repeat(2, 1fr) !important;
+                }
+                .carousel-button.prev {
+                    left: 5px;
+                }
+                .carousel-button.next {
+                    right: 5px;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .carousel-grid {
+                    grid-template-columns: 1fr !important;
                 }
                 .carousel-button.prev {
                     left: 10px;
@@ -310,21 +319,10 @@
             }
 
             @media (max-width: 600px) {
-                .blog-container {
-                    grid-template-columns: 1fr;
+                #contato form {
+                    width: 95%;
+                    padding: 20px;
                 }
-                .carousel-button.prev {
-                    left: 5px;
-                }
-                .carousel-button.next {
-                    right: 5px;
-                }
-            }
-
-            #contato form {
-                max-width: 100%;
-                width: 100%;
-                padding: 20px;
             }
         </style>
     </head>
