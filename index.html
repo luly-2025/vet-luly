@@ -284,6 +284,15 @@
                     justify-content: center;
                 }
             }
+
+            @media (max-width: 1024px) {
+                .blog-container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                .carousel-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
         </style>
     </head>
     
@@ -371,30 +380,7 @@
         </section>
         <section id="blog">
             <h2>Casos e dicas</h2>
-            <div id="posts-container" class="blog-container">
-                <div class="blog-card">
-                    <img src="post01.jpg" alt="Título do post">
-                    <div class="blog-card-content">
-                        <h3>Adaptação entre cães e gatos</h3>
-                    <p>Saiba como promover um convívio harmonioso entre espécies diferentes com técnicas simples e eficazes...</p>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <img src="post02.jpg" alt="Título do post">
-                    <div class="blog-card-content">
-                        <h3>Adaptação entre cães e gatos</h3>
-                    <p>Saiba como promover um convívio harmonioso entre espécies diferentes com técnicas simples e eficazes...</p>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <img src="post03.jpg" alt="Título do post">
-                    <div class="blog-card-content">
-                        <h3>Adaptação entre cães e gatos</h3>
-                    <p>Saiba como promover um convívio harmonioso entre espécies diferentes com técnicas simples e eficazes...</p>
-                    </div>
-                </div>
-            </div>
-            <script scr="js/blog.js"</script>
+            <div id="posts-container" class="blog-container"></div>
         </section>
         <section id="contato">
             <h2>Entre em contato</h2>
@@ -469,8 +455,9 @@
                 showGroup(0);
             });
         </script>
-
+        <script src="js/blog.js"></script>
     </body>
 </html>
+
 
 
