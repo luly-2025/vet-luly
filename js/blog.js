@@ -25,8 +25,9 @@ async function carregarPosts() {
     });
 
     const data = await response.json();
-    const posts = data.data.posts;
+    console.log("RETORNO DA API:", data);  // 👈 Ver aqui no console
 
+    const posts = data.data?.posts;
     const container = document.querySelector("#posts-container");
 
     if (!posts || posts.length === 0) {
@@ -36,11 +37,11 @@ async function carregarPosts() {
 
     container.innerHTML = posts.map(post => `
       <article class="blog-card">
-        <img src="${post.coverImage.url}" alt="${post.title}" />
+        <img src="${post.coverImage ? post.coverImage.url : 'https://via.placeholder.com/300'}" alt="${post.title}" />
         <div class="blog-card-content">
           <h3>${post.title}</h3>
           <small>${new Date(post.publishedAt).toLocaleDateString('pt-BR')}</small>
-          <div class="blog-content">${post.content.html}</div>
+          <div class="blog-content">${post.content?.html || '<p>Sem conteúdo disponível.</p>'}</div>
         </div>
       </article>
     `).join('');
